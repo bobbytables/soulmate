@@ -1,7 +1,7 @@
 module Soulmate
   module ORM
     class ActiveRecord
-      def self.add(record)
+      def self.add(record, data = {})
         # ProductType becomes product_type
         loader = ::Soulmate::Loader.new(record.class.to_s.underscore)
       
@@ -9,7 +9,8 @@ module Soulmate
         loader.add({
           "id"    => record.id,
           "term"  => record.to_s,
-          "score" => 1 # why not
+          "score" => 1 # why not,
+          "data"  => data
         })
       end
     end
