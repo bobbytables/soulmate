@@ -9,7 +9,7 @@ module Soulmate
         loader.add({
           "id"    => record.id,
           "term"  => record.to_s,
-          "score" => 1 # why not,
+          "score" => 1, # why not,
           "data"  => data
         })
       end
